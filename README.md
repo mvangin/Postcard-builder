@@ -1,4 +1,4 @@
-## The Conflict Continuum Blogsite
+## Postcard Builder
 
 <div>
   <img src="/screenshot.png" alt="postcard" width="400"></a>
