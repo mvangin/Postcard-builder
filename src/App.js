@@ -11,8 +11,7 @@ function App() {
   return (
     <div className="App">
       <Title />
-      <UploadForm setSelectedImg={setSelectedImg} setModal={setModal}/>
-      <PostCard selectedImg = {selectedImg} setModal={setModal} />
+      <PostCard selectedImg={selectedImg} setSelectedImg={setSelectedImg} setModal={setModal} />
       {modal && <Modal setSelectedImg={setSelectedImg} setModal={setModal}/>}
       
     </div>

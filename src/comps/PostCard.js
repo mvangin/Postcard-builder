@@ -1,6 +1,7 @@
 import React, {useState } from "react"
+import UploadForm from "./UploadForm"
 
-function PostCard({ selectedImg, setModal }) {
+function PostCard({ selectedImg, setModal, setSelectedImg }) {
     const [backCard, setBackCard] = useState(false);
     const [address, setAddress] = useState("");
     const [message, setMessage] = useState("");
@@ -46,6 +47,7 @@ function PostCard({ selectedImg, setModal }) {
     return (
         <>
 
+            {backCard && <UploadForm setSelectedImg={setSelectedImg} setModal={setModal}/> }
 
             <div className="genCardContainer">
 

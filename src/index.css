@@ -136,7 +136,9 @@ input[type="file"] {
 
 /* postCard */
 
-
+.post:hover {
+  cursor: pointer;
+}
 
 .genCardContainer {
   margin: 10px auto;
