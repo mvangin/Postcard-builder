@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/mvangin/Postcard-builder/static/css/main.132e441e.chunk.css",
-    "main.js": "/mvangin/Postcard-builder/static/js/main.0587a21f.chunk.js",
-    "main.js.map": "/mvangin/Postcard-builder/static/js/main.0587a21f.chunk.js.map",
-    "runtime-main.js": "/mvangin/Postcard-builder/static/js/runtime-main.aad8296f.js",
-    "runtime-main.js.map": "/mvangin/Postcard-builder/static/js/runtime-main.aad8296f.js.map",
-    "static/js/2.4f752469.chunk.js": "/mvangin/Postcard-builder/static/js/2.4f752469.chunk.js",
-    "static/js/2.4f752469.chunk.js.map": "/mvangin/Postcard-builder/static/js/2.4f752469.chunk.js.map",
-    "index.html": "/mvangin/Postcard-builder/index.html",
-    "precache-manifest.6b10eb6fd2afedae7407aa4d1d0c0a20.js": "/mvangin/Postcard-builder/precache-manifest.6b10eb6fd2afedae7407aa4d1d0c0a20.js",
-    "service-worker.js": "/mvangin/Postcard-builder/service-worker.js",
-    "static/css/main.132e441e.chunk.css.map": "/mvangin/Postcard-builder/static/css/main.132e441e.chunk.css.map",
-    "static/js/2.4f752469.chunk.js.LICENSE.txt": "/mvangin/Postcard-builder/static/js/2.4f752469.chunk.js.LICENSE.txt"
+    "main.css": "/Postcard-builder/static/css/main.132e441e.chunk.css",
+    "main.js": "/Postcard-builder/static/js/main.0587a21f.chunk.js",
+    "main.js.map": "/Postcard-builder/static/js/main.0587a21f.chunk.js.map",
+    "runtime-main.js": "/Postcard-builder/static/js/runtime-main.8afb9139.js",
+    "runtime-main.js.map": "/Postcard-builder/static/js/runtime-main.8afb9139.js.map",
+    "static/js/2.35352adf.chunk.js": "/Postcard-builder/static/js/2.35352adf.chunk.js",
+    "static/js/2.35352adf.chunk.js.map": "/Postcard-builder/static/js/2.35352adf.chunk.js.map",
+    "index.html": "/Postcard-builder/index.html",
+    "precache-manifest.52f3d851df0c142eb14bab3a63dd0aa0.js": "/Postcard-builder/precache-manifest.52f3d851df0c142eb14bab3a63dd0aa0.js",
+    "service-worker.js": "/Postcard-builder/service-worker.js",
+    "static/css/main.132e441e.chunk.css.map": "/Postcard-builder/static/css/main.132e441e.chunk.css.map",
+    "static/js/2.35352adf.chunk.js.LICENSE.txt": "/Postcard-builder/static/js/2.35352adf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.aad8296f.js",
-    "static/js/2.4f752469.chunk.js",
+    "static/js/runtime-main.8afb9139.js",
+    "static/js/2.35352adf.chunk.js",
     "static/css/main.132e441e.chunk.css",
     "static/js/main.0587a21f.chunk.js"
   ]
