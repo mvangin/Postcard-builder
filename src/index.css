@@ -146,7 +146,6 @@ input[type="file"] {
   max-width: 600px;
   height: 350px;
   max-height: 350px;
-  border: 1px solid black;
 }
 
 
@@ -175,7 +174,12 @@ input[type="file"] {
   height: 100%;
   border: 1px solid black;
   box-shadow: 4px 8px 5px;
+  animation: slide-in-from-right 3s;
+  transition: 2s;
+  position: relative;
 }
+
+
 .postCardContainerBack .post {
   max-width: 100%;
   min-width: 100%;
@@ -194,14 +198,22 @@ input[type="file"] {
 
 /* front of card */
 
-
-
 .stamps {
   text-align: center;
   position: absolute;
   width: 125px;
   left: -125px;
   top: 0px;
+  animation: slide-in-from-left 2s;
+}
+
+@keyframes slide-in-from-left{
+  0% {
+      transform: translateX(-100%)
+  }
+  100% {
+      transform: translateX(0%)
+  }
 }
 
 .stamps img:hover {
@@ -213,7 +225,17 @@ input[type="file"] {
   margin-bottom: 5px;
 }
 
+@keyframes slide-in-from-right{
+  0% {
+      transform: translateX(100%)
+  }
+  100% {
+      transform: translateX(0%)
+  }
+}
 .postCardContainerFront {
+  animation: slide-in-from-left 3s;
+  transition: 2s;
   position: relative;
   width: 100%;
   padding: 20px;
