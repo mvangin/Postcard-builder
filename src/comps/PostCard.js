@@ -4,7 +4,7 @@ import Backcard from "./Backcard"
 import Frontcard from "./Frontcard"
 
 function PostCard({ selectedImg, setModal, setSelectedImg }) {
-    const [frontcard, setFrontcard] = useState(true);
+    const [frontcard, setFrontcard] = useState(false);
 
     return (
         <>
