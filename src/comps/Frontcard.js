@@ -1,44 +1,42 @@
 import React, {useState} from "react"
 
-function Frontcard({ selectedImg, setModal }) {
+
+function Frontcard() {
+    const MESSAGELIMIT = 200;
+    const ADDRESSLIMIT = 80;
+
     const [address, setAddress] = useState("");
     const [message, setMessage] = useState("");
+    const [messageRemain, setMessageRemain] = useState(MESSAGELIMIT);
+    const [addressRemain, setAddressRemain] = useState(ADDRESSLIMIT);
+
     const [stamp, setStamp] = useState("/stamp.jpg")
 
-    const messageLimit = 200;
-    const addressLimit = 80;
 
+     function textLimit(event, limit){
 
-    const [messageLeft, setMessageLeft] = useState(messageLimit);
-    const [addressLeft, setAddressLeft] = useState(addressLimit);
+        let currText = event.target.value;
 
-
-    function addressChange(e) {
-        let currAddress = e.target.value;
-
-        if (currAddress.length >= addressLimit) {
-            currAddress = currAddress.slice(0, addressLimit)
+        if (currText.length >= limit) {
+            currText = currText.slice(0, limit)
         }
-
-        setAddressLeft(addressLimit - currAddress.length);
-        setAddress(currAddress);
+        let remaining = (limit - currText.length)
+        
+        return {remaining, currText}
     }
 
-
-    function messageChange(e) {
-        let currMessage = e.target.value;
-
-        if (currMessage.length >= messageLimit) {
-            currMessage = currMessage.slice(0, messageLimit)
-        }
-
-        setMessageLeft(messageLimit - currMessage.length);
-        setMessage(currMessage);
+    function messageChange(e){
+        const {remaining, currText} = textLimit(e, MESSAGELIMIT);
+        setMessageRemain(remaining);
+        setMessage(currText);
     }
 
-    function stampClick(e) {
-        setStamp(e.target.src)
+    function addressChange(e){
+        const {remaining, currText} = textLimit(e, ADDRESSLIMIT);
+        setAddressRemain(remaining);
+        setAddress(currText);
     }
+
 
     return (
         <div className="postCardContainerFront">
@@ -47,10 +45,10 @@ function Frontcard({ selectedImg, setModal }) {
                     Select Stamp <br />
                     <span style={{ fontSize: "2rem", fontWeight: "bold" }}> &#8659; </span>
                 </div>
-                <img src="/stamp2.jpg" alt="stamp" onClick={(e) => stampClick(e)} style={{ width: "80px" }} />
-                <img src="/stamp3.jpg" alt="stamp" onClick={(e) => stampClick(e)} style={{ width: "80px" }} />
-                <img src="/stamp4.jpg" alt="stamp" onClick={(e) => stampClick(e)} style={{ width: "80px" }} />
-                <img src="/stamp5.jpg" alt="stamp" onClick={(e) => stampClick(e)} style={{ width: "80px" }} />
+                <img src="/stamp2.jpg" alt="stamp" onClick={(e) => setStamp(e.target.src)} style={{ width: "80px" }} />
+                <img src="/stamp3.jpg" alt="stamp" onClick={(e) => setStamp(e.target.src)} style={{ width: "80px" }} />
+                <img src="/stamp4.jpg" alt="stamp" onClick={(e) => setStamp(e.target.src)} style={{ width: "80px" }} />
+                <img src="/stamp5.jpg" alt="stamp" onClick={(e) => setStamp(e.target.src)} style={{ width: "80px" }} />
             </div>
 
             <div className="post">
@@ -63,7 +61,7 @@ function Frontcard({ selectedImg, setModal }) {
                     <span className="line line5">  </span>
                     <span className="line line6">  </span>
                     <span className="line line7">  </span>
-                    <span>{`${messageLeft}/${messageLimit}`} </span>
+                    <span>{`${messageRemain}/${MESSAGELIMIT}`} </span>
                 </div>
 
                 <div className="address" >
@@ -72,7 +70,7 @@ function Frontcard({ selectedImg, setModal }) {
                     <span className="line line2">  </span>
                     <span className="line line3">  </span>
                     <span className="line line4">  </span>
-                    <span> {`${addressLeft}/${addressLimit}`} </span>
+                    <span> {`${addressRemain}/${ADDRESSLIMIT}`} </span>
 
                 </div>
                 <div className="stamp">
