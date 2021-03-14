@@ -19,8 +19,6 @@
 
 
 ## Demo
-* git clone repository
-* npm install
-* npm start
+Hosted and viewable on [Netlify](https://postcardbuilder.netlify.app/).
 
 
