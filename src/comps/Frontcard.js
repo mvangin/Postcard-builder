@@ -1,43 +1,21 @@
 import React, {useState} from "react"
-
+import useTextLimit from "../hooks/useTextLimit"
 
 function Frontcard() {
     const MESSAGELIMIT = 200;
     const ADDRESSLIMIT = 80;
 
-    const [address, setAddress] = useState("");
-    const [message, setMessage] = useState("");
-    const [messageRemain, setMessageRemain] = useState(MESSAGELIMIT);
-    const [addressRemain, setAddressRemain] = useState(ADDRESSLIMIT);
+   // const [address, setAddress] = useState("");
+   // const [message, setMessage] = useState("");
+    //const [messageRemain, setMessageRemain] = useState(MESSAGELIMIT);
+    //const [addressRemain, setAddressRemain] = useState(ADDRESSLIMIT);
 
     const [stamp, setStamp] = useState("/stamp.jpg")
 
-
-     function textLimit(event, limit){
-
-        let currText = event.target.value;
-
-        if (currText.length >= limit) {
-            currText = currText.slice(0, limit)
-        }
-        let remaining = (limit - currText.length)
-        
-        return {remaining, currText}
-    }
-
-    function messageChange(e){
-        const {remaining, currText} = textLimit(e, MESSAGELIMIT);
-        setMessageRemain(remaining);
-        setMessage(currText);
-    }
-
-    function addressChange(e){
-        const {remaining, currText} = textLimit(e, ADDRESSLIMIT);
-        setAddressRemain(remaining);
-        setAddress(currText);
-    }
-
-
+    
+    const [message, messageRemain, messageChange] = useTextLimit(MESSAGELIMIT);
+    const [address, addressRemain, addressChange] = useTextLimit(ADDRESSLIMIT);
+    
     return (
         <div className="postCardContainerFront">
             <div className="stamps">
@@ -53,7 +31,7 @@ function Frontcard() {
 
             <div className="post">
                 <div className="message">
-                    <textarea value={message} placeholder="add message here" onChange={messageChange} />
+                    <textarea value={message} placeholder="add message here" onChange={(e)=>messageChange(e.target.value, MESSAGELIMIT)} />
                     <span className="line line1"> </span>
                     <span className="line line2">  </span>
                     <span className="line line3">  </span>
@@ -65,7 +43,7 @@ function Frontcard() {
                 </div>
 
                 <div className="address" >
-                    <textarea value={address} placeholder="Address here" onChange={addressChange} />
+                    <textarea value={address} placeholder="Address here" onChange={(e)=>addressChange(e.target.value, ADDRESSLIMIT)} />
                     <span className="line line1"> </span>
                     <span className="line line2">  </span>
                     <span className="line line3">  </span>
