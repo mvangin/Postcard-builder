@@ -4,9 +4,7 @@ function useTextLimit(textTitle) {
     const [text, setText] = useState(localStorage.getItem([textTitle]) || "");
     const [remaining, setRemaining] = useState(text.length);
 
-    useEffect(()=> {
-        setRemaining(text.length)
-    },[text])
+    
 
     function calculate(currText, limit) {
         if (currText.length >= limit) {
