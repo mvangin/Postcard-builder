@@ -1,7 +1,6 @@
 import React, {useState} from "react"
 
 function useTextLimit(limit) {
-    console.log("fired")
     const [text, setText] = useState("");
     const [remaining, setRemaining] = useState(limit);
 
@@ -12,6 +11,8 @@ function useTextLimit(limit) {
         setRemaining(limit - currText.length)
         setText(currText);
     }
+
+    
     return [text, remaining, calculate]
 }
 

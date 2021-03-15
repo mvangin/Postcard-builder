@@ -6,7 +6,8 @@ import UploadForm from './comps/UploadForm';
 
 function App() {
   const [modal, setModal] = useState(false)
-  const [selectedImg, setSelectedImg] = useState(null)
+  const [selectedImg, setSelectedImg] = useState(localStorage.getItem('backcardImage') || "")
+
 
   return (
     <div className="App">

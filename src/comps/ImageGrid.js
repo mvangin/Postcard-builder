@@ -32,6 +32,7 @@ const ImageGrid = ({ setModal, setSelectedImg, handleClick }) => {
                         transition={{ delay: 1 }}
                         onClick={() => {
                             setSelectedImg(doc.url);
+                            localStorage.setItem('backcardImage', doc.url);
                             setModal(false)
                         }}
                     />
